@@ -101,5 +101,79 @@ $ git push origin master
 
 ## GitHub
 
+### 菜狗新手使用git远程仓库及本地仓库
 
+> ### 1）新建git
+>
+> ```
+> //本地生成一个git版本库
+> git init
+> ```
+>
+> ### 2）配置git
+>
+> ```
+> //配置用户名
+>  git config --global user.name "你的用户名"
+>  //配置邮箱
+>  git config --global user.email "你的邮箱"
+> ```
+>
+> ### 3）添加项目到暂存目录，提交项目到本地仓库
+>
+> ```
+> //添加整个项目，（后面是个.点号）
+> git add .
+> //添加某些个文件用这个命令
+> git add [指定目录/文件]
+> //提交到本地仓库
+> git commit -m "加备注"
+> ```
+>
+> ### 4）推送到远程仓库
+>
+> ```
+> //连接到远程仓库
+> git remote add origin https://gitee.com/你的用户名/仓库名.git
+> //会报错的话用如下：
+> 1、先输入 git remote rm origin
+> 2、再输入 git remote add origin https://gitee.com/你的用户名/仓库名.git
+> 
+> 
+> //先将远程仓库拉取下来
+> git pull --rebase origin master
+> //推送到分支命令
+> git push -u origin master
+> ```
+>
+> ### 5）从远程仓库拉取
+>
+> ```
+> git pull origin master
+> 
+> // 网络超时，error10054；IP地址正确的情况下多传几次；法一
+> // 修改设置，解除ssl验证
+> git config --global http.sslVerify "false"
+> 
+> ```
+>
+> ### 6）回退版本
+>
+> 
+
+
+
+#### 亿些些报错
+
+> github允许你本地仓库有的东西，远程仓库里没有，但**不允许远程仓库有的东西，你本地仓库没有**。
+>
+> 所以在提交之前需要先拷贝远程仓库，命令如下
+>
+> ```
+> git pull --rebase origin master
+> ```
+>
+> 
+
+三、分支与合并
 
